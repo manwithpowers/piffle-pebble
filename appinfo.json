@@ -1,0 +1,34 @@
+{
+    "resources": {
+        "media": [
+            {
+                "name": "PIFFLE_LOGO",
+                "file": "images/pifflepebble.png",
+                "type": "png"
+            },
+            {
+                "name": "SORTS_MILL_GOUDY_48",
+                "file": "fonts/OFLGoudyStMTT.ttf",
+                "type": "font"
+            },
+            {
+                "name": "SORTS_MILL_GOUDY_60",
+                "file": "fonts/OFLGoudyStMTT.ttf",
+                "type": "font"
+            }
+        ]
+    },
+    "longName": "piffle!",
+    "appKeys": {},
+    "watchapp": {
+        "watchface": true
+    },
+    "versionLabel": "1.0",
+    "shortName": "piffle!",
+    "companyName": "piffle!",
+    "capabilities": [
+        ""
+    ],
+    "versionCode": 1,
+    "uuid": "68a93a49-e3f4-4e6b-9ed9-b15b2ba30f03"
+}
