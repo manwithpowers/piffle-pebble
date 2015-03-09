@@ -2,10 +2,12 @@
  
 Window* window;
 TextLayer *time_layer;
+TextLayer *date_layer;
 GBitmap *piffle_bitmap;
 BitmapLayer *piffle_layer;
 
 static char time_buffer[] = "00:00";
+static char day_text[] = "Day 00";
 char *time_format;
 
 //UPDATE TIME
@@ -21,12 +23,17 @@ strftime(time_buffer, sizeof(time_buffer), time_format, tick_time);
 
 //Change the Time Layer text to show the new time!
 text_layer_set_text(time_layer, time_buffer);
+
+//Date layer
+strftime(day_text, sizeof(day_text), "%a %d", tick_time);
+text_layer_set_text(date_layer, day_text);
 }
 
 void window_load(Window *window)
 {
 //Load fonts
 ResHandle time_font_handle = resource_get_handle(RESOURCE_ID_SORTS_MILL_GOUDY_60);	
+ResHandle date_font_handle = resource_get_handle(RESOURCE_ID_QUICKSAND_REGULAR_15);	
 	
 //Time layer
 time_layer = text_layer_create(GRect(0, 65, 144, 168));
@@ -36,6 +43,15 @@ text_layer_set_text_alignment(time_layer, GTextAlignmentRight);
 text_layer_set_font(time_layer, fonts_load_custom_font(time_font_handle));
 
 layer_add_child(window_get_root_layer(window), (Layer*) time_layer);
+	
+//Date layer
+date_layer = text_layer_create(GRect(0, 150, 144, 33));
+text_layer_set_background_color(date_layer, GColorClear);
+text_layer_set_text_color(date_layer, GColorWhite);
+text_layer_set_text_alignment(date_layer, GTextAlignmentRight);
+text_layer_set_font(date_layer, fonts_load_custom_font(date_font_handle));
+
+layer_add_child(window_get_root_layer(window), (Layer*) date_layer);
 
 //Piffle Logo
 piffle_bitmap = gbitmap_create_with_resource(RESOURCE_ID_PIFFLE_LOGO);
@@ -58,6 +74,7 @@ void window_unload(Window *window)
 {
 //Destroy TextLayer
 text_layer_destroy(time_layer);
+text_layer_destroy(date_layer);
 
 //Destroy bitmaps
 gbitmap_destroy(piffle_bitmap);
@@ -75,7 +92,7 @@ window_set_window_handlers(window, (WindowHandlers) {
 .unload = window_unload,
 });
 
-tick_timer_service_subscribe(SECOND_UNIT, (TickHandler) time_handler);
+tick_timer_service_subscribe(MINUTE_UNIT, (TickHandler) time_handler);
 
 window_stack_push(window, true);
 }
