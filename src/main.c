@@ -48,7 +48,7 @@ layer_add_child(window_get_root_layer(window), (Layer*) time_layer);
 date_layer = text_layer_create(GRect(0, 150, 144, 33));
 text_layer_set_background_color(date_layer, GColorClear);
 text_layer_set_text_color(date_layer, GColorWhite);
-text_layer_set_text_alignment(date_layer, GTextAlignmentRight);
+text_layer_set_text_alignment(date_layer, GTextAlignmentCenter);
 text_layer_set_font(date_layer, fonts_load_custom_font(date_font_handle));
 
 layer_add_child(window_get_root_layer(window), (Layer*) date_layer);
