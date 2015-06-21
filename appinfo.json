@@ -9,14 +9,14 @@
     "resources": {
         "media": [
             {
-                "file": "fonts/Quicksand-Regular.ttf",
-                "name": "QUICKSAND_REGULAR_15",
-                "type": "font"
-            },
-            {
                 "file": "images/pifflepebble.png",
                 "name": "PIFFLE_LOGO",
                 "type": "png"
+            },
+            {
+                "file": "fonts/Quicksand-Regular.ttf",
+                "name": "QUICKSAND_REGULAR_15",
+                "type": "font"
             },
             {
                 "file": "fonts/OFLGoudyStMTT.ttf",
@@ -30,11 +30,14 @@
             }
         ]
     },
-    "sdkVersion": "2",
+    "sdkVersion": "3",
     "shortName": "piffle!",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "68a93a49-e3f4-4e6b-9ed9-b15b2ba30f03",
-    "versionCode": 1,
-    "versionLabel": "1.1",
+    "versionLabel": "1.2",
     "watchapp": {
         "watchface": true
     }
