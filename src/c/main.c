@@ -73,6 +73,9 @@ layer_add_child(window_get_root_layer(window), (Layer*) date_layer);
 piffle_bitmap = gbitmap_create_with_resource(RESOURCE_ID_PIFFLE_LOGO);
 //Create BitmapLayers to show GBitmaps and add to Window
 piffle_layer = bitmap_layer_create(GRect(0, 0, 144, 64));
+#if defined(PBL_BW)  
+  bitmap_layer_set_compositing_mode(piffle_layer, GCompOpSet);  
+#endif
 bitmap_layer_set_bitmap(piffle_layer, piffle_bitmap);
 layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(piffle_layer));
 	
