@@ -1,0 +1,49 @@
+{
+    "author": "piffle!",
+    "dependencies": {},
+    "keywords": [],
+    "name": "piffle",
+    "pebble": {
+        "displayName": "piffle!",
+        "enableMultiJS": false,
+        "messageKeys": [],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/pifflepebble.png",
+                    "name": "PIFFLE_LOGO",
+                    "type": "png"
+                },
+                {
+                    "file": "fonts/Quicksand-Regular.ttf",
+                    "name": "QUICKSAND_REGULAR_15",
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/OFLGoudyStMTT.ttf",
+                    "name": "SORTS_MILL_GOUDY_48",
+                    "targetPlatforms": null,
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/OFLGoudyStMTT.ttf",
+                    "name": "SORTS_MILL_GOUDY_18",
+                    "targetPlatforms": null,
+                    "type": "font"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "emery"
+        ],
+        "uuid": "68a93a49-e3f4-4e6b-9ed9-b15b2ba30f03",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.2.0"
+}

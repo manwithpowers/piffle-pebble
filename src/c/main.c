@@ -32,11 +32,15 @@ text_layer_set_text(date_layer, day_text);
 void window_load(Window *window)
 {
 //Load fonts
-ResHandle time_font_handle = resource_get_handle(RESOURCE_ID_SORTS_MILL_GOUDY_60);	
+ResHandle time_font_handle = resource_get_handle(RESOURCE_ID_SORTS_MILL_GOUDY_48);	
 ResHandle date_font_handle = resource_get_handle(RESOURCE_ID_QUICKSAND_REGULAR_15);	
 	
 //Time layer
-time_layer = text_layer_create(GRect(0, 65, 144, 168));
+#if PBL_DISPLAY_HEIGHT == 228  
+  time_layer = text_layer_create(GRect(0, 85, 200, 220));  
+#else
+  time_layer = text_layer_create(GRect(0, 65, 144, 168));
+#endif  
 text_layer_set_background_color(time_layer, GColorClear);
 #ifdef PBL_COLOR
 	text_layer_set_text_color(time_layer, GColorBlack);
@@ -49,7 +53,11 @@ text_layer_set_font(time_layer, fonts_load_custom_font(time_font_handle));
 layer_add_child(window_get_root_layer(window), (Layer*) time_layer);
 	
 //Date layer
-date_layer = text_layer_create(GRect(0, 150, 144, 33));
+#if PBL_DISPLAY_HEIGHT == 228  
+  date_layer = text_layer_create(GRect(0, 200, 200, 50));
+#else
+  date_layer = text_layer_create(GRect(0, 150, 144, 33));  
+#endif  
 text_layer_set_background_color(date_layer, GColorClear);
 #ifdef PBL_COLOR
 	text_layer_set_text_color(date_layer, GColorBlack);
